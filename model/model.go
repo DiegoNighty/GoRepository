@@ -5,6 +5,10 @@ import (
 	"github.com/google/uuid"
 )
 
+func NewUser(id uuid.UUID, name string, password string) *User {
+	return &User{id, name, password}
+}
+
 type Model interface {
 	Id() uuid.UUID
 }

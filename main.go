@@ -19,8 +19,8 @@ func main() {
 		randomId = newUUID
 	}
 
-	test := model.User{Identifier: randomId, Name: "hola", Password: "si"}
-	cache.Save(test)
+	testUser := model.NewUser(randomId, "hola", "si")
+	cache.Save(*testUser)
 
 	user := cache.Find(randomId).(model.User)
 	fmt.Println(user)
